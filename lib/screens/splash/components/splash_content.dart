@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -16,14 +17,12 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         Spacer(),
-        Text(
-          "TOKOTO",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(36),
-            color: kPrimaryColor,
-            fontWeight: FontWeight.bold,
-          ),
+        RotatedBox(
+          quarterTurns: 4,
+          child: SvgPicture.asset('assets/images/logo.svg',
+              semanticsLabel: 'App Logo'),
         ),
+        SizedBox(height: getProportionateScreenWidth(20)),
         Text(
           text,
           textAlign: TextAlign.center,

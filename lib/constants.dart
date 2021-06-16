@@ -15,7 +15,7 @@ const kTextColor = Color(0xff000000);
 const kDividerColor = Color(0xffc7c7c7);
 const kButtonColor = Color(0xffE01E5A);
 const kPrimaryColor = Color(0xffE01E5A);
-const kTextFieldBGColor = Color(0xffFF22F9);
+const kTextFieldBGColor = Color(0xFFFFF8F9);
 const kSecondaryColor = Color(0xFF979797);
 // TextStyles
 const kHeadline = TextStyle(

@@ -5,8 +5,6 @@ import 'package:shop_app/screens/home/components/search_product.dart';
 
 import '../../../size_config.dart';
 import 'categories.dart';
-import 'discount_banner.dart';
-import 'home_header.dart';
 import 'popular_product.dart';
 import 'special_offers.dart';
 
@@ -20,10 +18,9 @@ class Body extends StatelessWidget {
             // HomeHeader(),
             SetAppBar(),
             SearchProduct(),
-            SizedBox(height: getProportionateScreenWidth(10)),
             // DiscountBanner(),
             TopPromoSlider(),
-            SizedBox(height: getProportionateScreenWidth(10)),
+            SizedBox(height: getProportionateScreenWidth(5)),
             SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(10)),
             Categories(),
