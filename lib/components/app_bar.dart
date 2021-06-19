@@ -10,16 +10,15 @@ class SetAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        padding: AppTheme.padding,
-        child: Row(
+      child: AppBar(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             // ignore: deprecated_member_use
             GestureDetector(
               child: SetIcon(icon: Icons.menu, color: kPrimaryColor),
               onTap: () {
-
+                Scaffold.of(context).openDrawer();
               },
             ),
             RotatedBox(

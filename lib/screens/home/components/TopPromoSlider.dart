@@ -1,25 +1,24 @@
-import 'dart:ffi';
-
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
 
 class TopPromoSlider extends StatelessWidget {
   final int animationDuration = 1000;
-  final int autoplayDuration = 10000;
+  final int autoplayDuration = 5000;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 20, right: 20),
       child: Container(
-        height: 150.0,
+        height: 127.0,
         width: double.infinity,
         child: Carousel(
           images: [
             Image.asset(
               "assets/images/promotion__one.png",
-              height: 150,
+              height: double.infinity,
               width: double.infinity,
             ),
             Image.asset(
@@ -42,7 +41,8 @@ class TopPromoSlider extends StatelessWidget {
           autoplay: true,
           radius: Radius.circular(20),
           moveIndicatorFromBottom: 180.0,
-          noRadiusForIndicator: true,
+          noRadiusForIndicator: false,
+          showIndicator: false,
           animationDuration: Duration(milliseconds: animationDuration),
           autoplayDuration: Duration(milliseconds: autoplayDuration),
         ),

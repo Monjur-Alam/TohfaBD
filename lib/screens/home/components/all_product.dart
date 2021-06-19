@@ -5,7 +5,7 @@ import 'package:shop_app/models/Product.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class PopularProducts extends StatelessWidget {
+class AllProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
