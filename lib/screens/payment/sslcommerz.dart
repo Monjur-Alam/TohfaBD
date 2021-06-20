@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/components/default_button.dart';
 import 'package:sslcommerz_flutter/model/SSLCAdditionalInitializer.dart';
 import 'package:sslcommerz_flutter/model/SSLCCustomerInfoInitializer.dart';
 import 'package:sslcommerz_flutter/model/SSLCEMITransactionInitializer.dart';
@@ -14,92 +12,144 @@ import 'package:sslcommerz_flutter/model/sslproductinitilizer/General.dart';
 import 'package:sslcommerz_flutter/model/sslproductinitilizer/SSLCProductInitializer.dart';
 import 'package:sslcommerz_flutter/sslcommerz.dart';
 
-import '../../../constants.dart';
-import '../../../size_config.dart';
 
-class CheckoutCard extends StatelessWidget {
-  const CheckoutCard({
-    Key key,
-  }) : super(key: key);
+class SSLCommerz extends StatefulWidget {
+  static String routeName = "/payment";
+  @override
+  SSLCommerzState createState() => SSLCommerzState();
+}
+
+class SSLCommerzState extends State<SSLCommerz> {
+  var _key = GlobalKey<FormState>();
+  dynamic formData = {};
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: getProportionateScreenWidth(15),
-        horizontal: getProportionateScreenWidth(30),
-      ),
-      // height: 174,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -15),
-            blurRadius: 20,
-            color: Color(0xFFDADADA).withOpacity(0.15),
-          )
-        ],
-      ),
-      child: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: getProportionateScreenWidth(40),
-                  width: getProportionateScreenWidth(40),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF5F6F9),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: SvgPicture.asset("assets/icons/receipt.svg"),
-                ),
-                Spacer(),
-                Text("Add voucher code"),
-                const SizedBox(width: 10),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: kTextColor,
-                )
-              ],
-            ),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text.rich(
-                  TextSpan(
-                    text: "Total:\n",
-                    children: [
-                      TextSpan(
-                        text: "\$337.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+    return MaterialApp(
+      home: Scaffold(
+          body: Form(
+            key: _key,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: "testbox",
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(8.0))),
+                          hintText: "Store ID",
+                        ),
+                        validator: (value) {
+                          if (value.isEmpty)
+                            return "Please input store id";
+                          else
+                            return null;
+                        },
+                        onSaved: (value) {
+                          formData['store_id'] = value;
+                        },
                       ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: "qwerty",
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(8.0))),
+                          hintText: "Store password",
+                        ),
+                        validator: (value) {
+                          if (value.isEmpty)
+                            return "Please input store password";
+                          else
+                            return null;
+                        },
+                        onSaved: (value) {
+                          formData['store_password'] = value;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(8.0))),
+                          hintText: "Phone number",
+                        ),
+                        onSaved: (value) {
+                          formData['phone'] = value;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: "10",
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(8.0))),
+                          hintText: "Payment amount",
+                        ),
+                        validator: (value) {
+                          if (value.isEmpty)
+                            return "Please input amount";
+                          else
+                            return null;
+                        },
+                        onSaved: (value) {
+                          formData['amount'] = double.parse(value);
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(8.0))),
+                          hintText: "Enter multi card",
+                        ),
+                        onSaved: (value) {
+                          formData['multicard'] = value;
+                        },
+                      ),
+                    ),
+                    RaisedButton(
+                      child: Text("Pay now"),
+                      onPressed: () {
+                        if (_key.currentState.validate()) {
+                          _key.currentState.save();
+                          // sslCommerzGeneralCall();
+                          sslCommerzCustomizedCall();
+                        }
+                      },
+                    )
+                  ],
                 ),
-                SizedBox(
-                  width: getProportionateScreenWidth(190),
-                  child: DefaultButton(
-                    text: "Check Out",
-                    press: () {
-                      sslCommerzCustomizedCall();
-                    },
-                  ),
-                ),
-              ],
+              ),
             ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 
@@ -107,13 +157,13 @@ class CheckoutCard extends StatelessWidget {
     Sslcommerz sslcommerz = Sslcommerz(
         initializer: SSLCommerzInitialization(
             ipn_url: "www.ipnurl.com",
-            multi_card_name: 'multicard',
+            multi_card_name: formData['multicard'],
             currency: SSLCurrencyType.BDT,
             product_category: "Food",
             sdkType: SSLCSdkType.TESTBOX,
-            store_id: 'centr5eb574ade72ea',
-            store_passwd: 'centr5eb574ade72ea',
-            total_amount: 100.0,
+            store_id: formData['store_id'],
+            store_passwd: formData['store_password'],
+            total_amount: formData['amount'],
             tran_id: "1231321321321312"));
     sslcommerz.payNow();
   }
@@ -122,13 +172,13 @@ class CheckoutCard extends StatelessWidget {
     Sslcommerz sslcommerz = Sslcommerz(
         initializer: SSLCommerzInitialization(
             ipn_url: "www.ipnurl.com",
-            multi_card_name: 'multicard',
+            multi_card_name: formData['multicard'],
             currency: SSLCurrencyType.BDT,
             product_category: "Food",
             sdkType: SSLCSdkType.TESTBOX,
-            store_id: 'testbox',
-            store_passwd: 'qwerty',
-            total_amount: 100.0,
+            store_id: formData['store_id'],
+            store_passwd: formData['store_password'],
+            total_amount: formData['amount'],
             tran_id: "1231321321321312"));
     sslcommerz
         .addEMITransactionInitializer(
@@ -152,7 +202,7 @@ class CheckoutCard extends StatelessWidget {
             customerCity: null,
             customerPostCode: null,
             customerCountry: null,
-            customerPhone: "01755467748"))
+            customerPhone: formData['phone']))
         .addProductInitializer(
         sslcProductInitializer:
         // ***** ssl product initializer for general product STARTS*****

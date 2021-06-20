@@ -32,6 +32,7 @@ dependencies:
   provider: ^4.3.1 # for State management
   carousel_pro: ^1.0.0 # promo slider
   flutter_svg_provider: ^0.1.8 # to use svg images
+  sslcommerz_flutter: ^0.0.3 # to use online payment
 
 dev_dependencies:
   flutter_test:
