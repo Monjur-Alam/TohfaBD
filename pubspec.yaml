@@ -18,7 +18,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -30,6 +30,10 @@ dependencies:
   # if you are using latest flutter please update your flutter_svg package to ^0.18.*
   flutter_svg: ^0.22.0 # help us to use SVG in our app
   provider: ^4.3.1 # for State management
+  dio: 3.0.9
+  cached_network_image: ^2.2.0+1
+  intl: ^0.16.1
+  webview_flutter: ^0.3.22+1
   carousel_pro: ^1.0.0 # promo slider
   flutter_svg_provider: ^0.1.8 # to use svg images
   sslcommerz_flutter: ^0.0.3 # to use online payment

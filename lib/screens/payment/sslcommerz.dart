@@ -14,7 +14,6 @@ import 'package:sslcommerz_flutter/sslcommerz.dart';
 
 
 class SSLCommerz extends StatefulWidget {
-  static String routeName = "/payment";
   @override
   SSLCommerzState createState() => SSLCommerzState();
 }
