@@ -43,6 +43,7 @@ class _CategoryProductState extends State<CategoryProduct> {
   Widget build(BuildContext context) {
     var vs = Provider.of<NewsArticleListViewModel>(context);
     return Scaffold(
+      // appBar: buildAppBar(context),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,6 +77,19 @@ class _CategoryProductState extends State<CategoryProduct> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      title: Column(
+        children: [
+          Text(
+            "Product Category",
+            style: TextStyle(color: Colors.black),
+          ),
+        ],
       ),
     );
   }

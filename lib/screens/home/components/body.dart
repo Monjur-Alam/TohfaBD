@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
         child: Column(
           children: [
             // HomeHeader(),
-            // SetAppBar(),
+            SetAppBar(),
             SearchProduct(),
             // DiscountBanner(),
             TopPromoSlider(),

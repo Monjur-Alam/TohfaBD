@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
@@ -50,14 +51,18 @@ class _HomeScreenState extends State<HomeScreen> {
             // ignore: deprecated_member_use
             GestureDetector(
               child: SetIcon(icon: Icons.shopping_cart, color: kPrimaryColor),
-              onTap: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
+              onTap: () {Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => CategoryProduct(),
+                ),
+              );
               },
             )
           ],
         ),
       ),
-      body: _getDrawerFragment(_selectedDrawerIndex),
+      body: Body(),
       drawer: Drawer(
         child: Column(
           children: <Widget>[
@@ -126,7 +131,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       selected: index == _selectedDrawerIndex,
-      onTap: () => _onSelectItem(index),
+      onTap: () {
+        Navigator.pushNamed(context, CategoryProduct.routeName);
+      },
+      // onTap: () => _onSelectItem(index),
     );
   }
 

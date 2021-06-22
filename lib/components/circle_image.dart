@@ -21,7 +21,7 @@ class CircleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: imageUrl ?? '',
+      imageUrl: imageUrl != null ? imageUrl : "http://via.placeholder.com/350x150",
       imageBuilder: (context, imageProvider) {
         return _imageWidget(imageProvider);
       },
