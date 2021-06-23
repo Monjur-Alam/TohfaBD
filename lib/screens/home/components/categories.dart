@@ -18,7 +18,7 @@ class Categories extends StatelessWidget {
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(20)),
+      padding: EdgeInsets.symmetric(vertical: 20),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Padding(
@@ -60,13 +60,13 @@ class CategoryCard extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10),
         child: SizedBox(
-          width: getProportionateScreenWidth(55),
+          width: 55,
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-                height: getProportionateScreenWidth(55),
-                width: getProportionateScreenWidth(55),
+                padding: EdgeInsets.all(15),
+                height: 55,
+                width: 55,
                 decoration: BoxDecoration(
                   color: kTextFieldBGColor,
                   borderRadius: BorderRadius.circular(10),

@@ -35,7 +35,7 @@ class NewsGrid extends StatelessWidget {
           },
           child: GridTile(
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              margin: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
               child: CircleImage(
                 imageUrl: article.imageUrl,
               ),

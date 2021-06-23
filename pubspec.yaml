@@ -18,7 +18,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -37,6 +37,7 @@ dependencies:
   carousel_pro: ^1.0.0 # promo slider
   flutter_svg_provider: ^0.1.8 # to use svg images
   sslcommerz_flutter: ^0.0.3 # to use online payment
+  package_info: ^0.4.0+6
 
 dev_dependencies:
   flutter_test:

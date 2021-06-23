@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/components/news_grid.dart';
+import 'package:shop_app/screens/home/components/search_product.dart';
 import 'package:shop_app/viewmodels/news_article_list_view_model.dart';
 
 class CategoryProduct extends StatefulWidget {
@@ -26,7 +27,7 @@ class _CategoryProductState extends State<CategoryProduct> {
         );
       case LoadingStatus.completed:
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: NewsGrid(
             articles: vs.articles,
           ),
@@ -43,29 +44,15 @@ class _CategoryProductState extends State<CategoryProduct> {
   Widget build(BuildContext context) {
     var vs = Provider.of<NewsArticleListViewModel>(context);
     return Scaffold(
-      // appBar: buildAppBar(context),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            SearchProduct(),
             Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: const EdgeInsets.only(left: 20, top: 0, bottom: 15),
               child: Text(
-                'News',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-            Divider(
-              height: 40,
-              color: Color(0xffFF8A30),
-              thickness: 8,
-              indent: 30,
-              endIndent: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 30, top: 15, bottom: 15),
-              child: Text(
-                'Headline',
+                'Category Product',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -77,19 +64,6 @@ class _CategoryProductState extends State<CategoryProduct> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  AppBar buildAppBar(BuildContext context) {
-    return AppBar(
-      title: Column(
-        children: [
-          Text(
-            "Product Category",
-            style: TextStyle(color: Colors.black),
-          ),
-        ],
       ),
     );
   }

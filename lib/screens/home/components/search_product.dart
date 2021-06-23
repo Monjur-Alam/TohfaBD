@@ -16,7 +16,7 @@ class SearchProduct extends StatelessWidget {
               height: 40,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: LightColor.lightGrey.withAlpha(100),
+                  color: kTextFieldBGColor,
                   borderRadius: BorderRadius.all(Radius.circular(13))
               ),
               child: TextField(
@@ -24,7 +24,7 @@ class SearchProduct extends StatelessWidget {
                     border: InputBorder.none,
                     hintText: "Search Products",
                     hintStyle: TextStyle(fontSize: 12),
-                    contentPadding: EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 5),
+                    contentPadding: EdgeInsets.only(left: 0, right: 10, bottom: 0, top: 5),
                     prefixIcon: Icon(Icons.search, color: kPrimaryColor)),
               ),
             ),

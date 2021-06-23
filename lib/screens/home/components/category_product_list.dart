@@ -11,8 +11,10 @@ class CategoryProductsList extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Most Popular", press: () {}),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: SectionTitle(title: "Most Popular", press: () {
+            // see more
+          }),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
