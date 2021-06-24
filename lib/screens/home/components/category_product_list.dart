@@ -9,32 +9,22 @@ class CategoryProductsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: SectionTitle(title: "Most Popular", press: () {
-            // see more
-          }),
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Text(
+          'Headline',
+          style: TextStyle(fontSize: 18),
         ),
-        SizedBox(height: getProportionateScreenWidth(20)),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ...List.generate(
-                demoProducts.length,
-                (index) {
-                  if (demoProducts[index].isPopular)
-                    return ProductCard(product: demoProducts[index]);
-
-                  return SizedBox
-                      .shrink(); // here by default width and height is 0
-                },
-              ),
-              SizedBox(width: getProportionateScreenWidth(20)),
-            ],
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: 15,
+            itemBuilder: (BuildContext context, int index) => Card(
+              child: Center(child: Text('Dummy Card Text')),
+            ),
           ),
-        )
+        ),
       ],
     );
   }

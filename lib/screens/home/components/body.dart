@@ -46,7 +46,7 @@ class HomeBody extends StatelessWidget {
           // DiscountBanner(),
           TopPromoSlider(),
           Categories(),
-          // CategoryProductsList(),
+          CategoryProductsList(),
           // SizedBox(height: getProportionateScreenWidth(5)),
           // SpecialOffers(),
           // SizedBox(height: getProportionateScreenWidth(30)),
