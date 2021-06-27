@@ -9,6 +9,7 @@ import 'package:shop_app/viewmodels/news_article_list_view_model.dart';
 
 class HomeBody extends StatelessWidget {
   final NewsArticleListViewModel viewModel;
+
   const HomeBody({this.viewModel});
 
   Widget _buildAllProductList() {
@@ -37,25 +38,43 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
+    return Container(
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        physics: ClampingScrollPhysics(),
+        shrinkWrap: true,
         children: [
           // HomeHeader(),
           // SetAppBar(),
           SearchProduct(),
+          SearchProduct(),
+          SearchProduct(),
           // DiscountBanner(),
           TopPromoSlider(),
           Categories(),
-          CategoryProductsList(),
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+            child: SectionTitle(
+                title: "Most Popular",
+                press: () {
+                  // see more
+                }),
+          ),
+          Expanded(child: CategoryProductsList()),
+          // CategoryProductsList(),
           // SizedBox(height: getProportionateScreenWidth(5)),
           // SpecialOffers(),
           // SizedBox(height: getProportionateScreenWidth(30)),
 
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-            child: SectionTitle(title: "All Products", press: () {
-              // see more
-            }),
+            padding:
+                const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+            child: SectionTitle(
+                title: "All Products",
+                press: () {
+                  // see more
+                }),
           ),
           Expanded(
             child: _buildAllProductList(),
