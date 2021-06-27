@@ -15,6 +15,7 @@ class CategoryProductsList extends StatelessWidget {
           'Headline',
           style: TextStyle(fontSize: 18),
         ),
+
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
