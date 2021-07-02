@@ -20,9 +20,9 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
+      padding: EdgeInsets.only(left: 20),
       child: SizedBox(
-        width: getProportionateScreenWidth(width),
+        width: width,
         child: GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1.02,
                 child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                  padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
@@ -58,7 +58,7 @@ class ProductCard extends StatelessWidget {
                   Text(
                     "\$${product.price}",
                     style: TextStyle(
-                      fontSize: getProportionateScreenWidth(18),
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
                     ),
@@ -67,9 +67,9 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     onTap: () {},
                     child: Container(
-                      padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                      height: getProportionateScreenWidth(28),
-                      width: getProportionateScreenWidth(28),
+                      padding: EdgeInsets.all(8),
+                      height: 28,
+                      width: 28,
                       decoration: BoxDecoration(
                         color: product.isFavourite
                             ? kPrimaryColor.withOpacity(0.15)

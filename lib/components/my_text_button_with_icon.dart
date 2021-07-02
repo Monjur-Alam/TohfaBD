@@ -23,7 +23,7 @@ class MyTextIconButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
-        height: getProportionateScreenHeight(56),
+        height: 56,
         width: double.infinity,
         decoration: BoxDecoration(
           color: bgColor,
@@ -39,7 +39,7 @@ class MyTextIconButton extends StatelessWidget {
             label: Text(
               buttonName,
               style: TextStyle(
-                fontSize: getProportionateScreenWidth(16),
+                fontSize: 16,
                 color: textColor,
               ),
               // style: kButtonText.copyWith(color: textColor),

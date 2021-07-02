@@ -57,7 +57,7 @@ class Body extends StatelessWidget {
                           bgColor: kButtonColor,
                           textColor: Colors.white,
                         ),
-                        SizedBox(height: getProportionateScreenHeight(20)),
+                        SizedBox(height: 20),
                         AlreadyHaveAnAccountCheck(
                           press: () {
                             Navigator.push(context,
@@ -67,7 +67,7 @@ class Body extends StatelessWidget {
                           },
                           login: false,
                         ),
-                        SizedBox(height: getProportionateScreenHeight(20)),
+                        SizedBox(height: 20),
                       ],
                     ),
                   )

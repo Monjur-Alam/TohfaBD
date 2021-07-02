@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
                             "Welcome Back",
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: getProportionateScreenWidth(28),
+                              fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -65,7 +65,7 @@ class Body extends StatelessWidget {
                             bgColor: kButtonColor,
                             textColor: Colors.white,
                           ),
-                          SizedBox(height: getProportionateScreenHeight(20)),
+                          SizedBox(height: 20),
                           AlreadyHaveAnAccountCheck(
                             press: () {
                               Navigator.push(context,

@@ -38,23 +38,18 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        physics: ClampingScrollPhysics(),
-        shrinkWrap: true,
+    return SafeArea(
+      child: Column(
         children: [
           // HomeHeader(),
           // SetAppBar(),
-          SearchProduct(),
-          SearchProduct(),
           SearchProduct(),
           // DiscountBanner(),
           TopPromoSlider(),
           Categories(),
           Padding(
             padding:
-                const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+            const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
             child: SectionTitle(
                 title: "Most Popular",
                 press: () {
@@ -63,13 +58,13 @@ class HomeBody extends StatelessWidget {
           ),
           Expanded(child: CategoryProductsList()),
           // CategoryProductsList(),
-          // SizedBox(height: getProportionateScreenWidth(5)),
+          // SizedBox(height: 5),
           // SpecialOffers(),
-          // SizedBox(height: getProportionateScreenWidth(30)),
+          // SizedBox(height: 30),
 
           Padding(
             padding:
-                const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+            const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
             child: SectionTitle(
                 title: "All Products",
                 press: () {
@@ -79,7 +74,7 @@ class HomeBody extends StatelessWidget {
           Expanded(
             child: _buildAllProductList(),
           ),
-          // SizedBox(height: getProportionateScreenWidth(30)),
+          // SizedBox(height: 30),
         ],
       ),
     );

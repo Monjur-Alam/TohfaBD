@@ -41,14 +41,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       child: Column(
         children: [
           buildFirstNameFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: 30),
           buildLastNameFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: 30),
           buildPhoneNumberFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: 30),
           buildAddressFormField(),
           FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(40)),
+          SizedBox(height: 40),
           DefaultButton(
             text: "continue",
             press: () {

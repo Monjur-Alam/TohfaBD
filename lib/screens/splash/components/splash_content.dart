@@ -22,7 +22,7 @@ class SplashContent extends StatelessWidget {
           child: SvgPicture.asset('assets/images/logo.svg',
               semanticsLabel: 'App Logo'),
         ),
-        SizedBox(height: getProportionateScreenWidth(20)),
+        SizedBox(height: 20),
         Text(
           text,
           textAlign: TextAlign.center,
@@ -30,8 +30,8 @@ class SplashContent extends StatelessWidget {
         Spacer(flex: 2),
         Image.asset(
           image,
-          height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
+          height: 256,
+          width: 235,
         ),
       ],
     );
