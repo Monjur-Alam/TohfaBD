@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/circle_image.dart';
-import 'package:shop_app/viewmodels/news_article_view_model.dart';
+import 'package:shop_app/viewmodels/product_view_model.dart';
 
 class NewsArticleDetailScreen extends StatelessWidget {
-  final NewsArticleViewModel article;
+  final ProductViewModel productViewModel;
 
-  NewsArticleDetailScreen({@required this.article});
+  NewsArticleDetailScreen({@required this.productViewModel});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    this.article.author ?? 'Undefined',
+                    this.productViewModel.product_name ?? 'Undefined',
                     overflow: TextOverflow.ellipsis,
                   )
                 ],
@@ -69,7 +69,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  this.article.title,
+                  this.productViewModel.product_name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -80,7 +80,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  this.article.publishedAt,
+                  this.productViewModel.product_source_name,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey,
@@ -92,14 +92,14 @@ class NewsArticleDetailScreen extends StatelessWidget {
                 Container(
                   height: 200,
                   child: CircleImage(
-                    imageUrl: this.article.imageUrl,
+                    imageUrl: this.productViewModel.product_img_url,
                   ),
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 Text(
-                  this.article.description ?? "No Contents",
+                  this.productViewModel.product_desc ?? "No Contents",
                   style: TextStyle(
                     fontSize: 16,
                     wordSpacing: 3,

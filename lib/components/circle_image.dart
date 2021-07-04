@@ -9,7 +9,7 @@ class CircleImage extends StatelessWidget {
   Widget _imageWidget(ImageProvider imageProvider) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(0),
         image: DecorationImage(
           image: imageProvider,
           fit: BoxFit.cover,

@@ -26,8 +26,8 @@ class ProductCard extends StatelessWidget {
         child: GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
-            DetailsScreen.routeName,
-            arguments: ProductDetailsArguments(product: product),
+            ProductDetailsScreen.routeName,
+            // arguments: ProductDetailsArguments(product: product),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
               Text(
                 product.title,
                 style: TextStyle(color: Colors.black),
-                maxLines: 2,
+                maxLines: 1,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

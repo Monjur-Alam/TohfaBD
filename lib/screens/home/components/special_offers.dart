@@ -65,8 +65,8 @@ class SpecialOfferCard extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: SizedBox(
-          width: 28,
-          height: 28,
+          width: 200,
+          height: 100,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(13),
             child: Stack(

@@ -4,7 +4,7 @@ import 'package:shop_app/screens/category_product/category_product.dart';
 
 import 'package:package_info/package_info.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
-import 'package:shop_app/viewmodels/news_article_list_view_model.dart';
+import 'package:shop_app/viewmodels/product_list_view_model.dart';
 
 class JWFDDrawer extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class JWFDDrawerState extends State<JWFDDrawer> {
           'pageBuilder': (BuildContext context) => MultiProvider(
             providers: [
               ChangeNotifierProvider(
-                create: (_) => NewsArticleListViewModel(),
+                create: (_) => ProductListViewModel(),
               )
             ],
             child: CategoryProduct(),

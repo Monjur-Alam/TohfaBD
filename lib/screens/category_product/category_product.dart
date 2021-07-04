@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/components/news_grid.dart';
+import 'package:shop_app/components/product_grid.dart';
 import 'package:shop_app/screens/home/components/search_product.dart';
-import 'package:shop_app/viewmodels/news_article_list_view_model.dart';
+import 'package:shop_app/viewmodels/product_list_view_model.dart';
 
 class CategoryProduct extends StatefulWidget {
   static String routeName = "/payment";
@@ -15,12 +15,12 @@ class _CategoryProductState extends State<CategoryProduct> {
   @override
   void initState() {
     super.initState();
-    Provider.of<NewsArticleListViewModel>(context, listen: false)
-        .topHeadlines();
+    Provider.of<ProductListViewModel>(context, listen: false)
+        .getProductList();
   }
 
-  Widget _buildList(NewsArticleListViewModel vs) {
-    switch (vs.loadingStatus) {
+  Widget _buildList(ProductListViewModel productListViewModel) {
+    switch (productListViewModel.loadingStatus) {
       case LoadingStatus.searching:
         return Center(
           child: CircularProgressIndicator(),
@@ -28,8 +28,8 @@ class _CategoryProductState extends State<CategoryProduct> {
       case LoadingStatus.completed:
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: NewsGrid(
-            articles: vs.articles,
+          child: ProductGrid(
+            productList: productListViewModel.productList,
           ),
         );
       case LoadingStatus.empty:
@@ -42,7 +42,7 @@ class _CategoryProductState extends State<CategoryProduct> {
 
   @override
   Widget build(BuildContext context) {
-    var vs = Provider.of<NewsArticleListViewModel>(context);
+    var vs = Provider.of<ProductListViewModel>(context);
     return Scaffold(
       body: SafeArea(
         child: Column(

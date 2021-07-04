@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../size_config.dart';
 
 class CustomAppBar extends PreferredSize {
-  final double rating;
+  final int rating;
 
   CustomAppBar({@required this.rating});
 
@@ -17,7 +17,7 @@ class CustomAppBar extends PreferredSize {
     return SafeArea(
       child: Padding(
         padding:
-            EdgeInsets.symmetric(horizontal: 20),
+            EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
         child: Row(
           children: [
             SizedBox(
